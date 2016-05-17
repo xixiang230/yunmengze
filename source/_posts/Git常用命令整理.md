@@ -1,6 +1,7 @@
 ---
 title: Git常用命令整理
 tags: [git]
+categories: [技术]
 ---
 # 初始化配置  
 git一共有3个配置文件：一是仓库级配置文件，位于当前仓库下(./.git/config)；二是全局配置文件(~/.gitconfig)；三是系统级别配置文件（/etc/gitconfig)。  

@@ -1,7 +1,8 @@
 ---
 title: hexo 标签无法显示
 date: 2016-05-15 15:38:34
-tags:
+tags: [hexo]
+categories: [技术]
 ---
 # hexo标签页无法显示  
 打开提示： Cannot GET /tags/  
@@ -9,7 +10,7 @@ tags:
 # 解决办法  
 1. 步骤一: 新建一个页面，命名为tags  
 ```hexo new page "tags"```  
-2. 步骤二: 编辑上述新建页面，将页面类型设置为tags，主题将自动为这个页面显示标签云  
+2. 步骤二: 编辑上述新建页面index.md，将页面类型设置为tags，主题将自动为这个页面显示标签云  
 <pre><code>
 title: tags  
 date: 2016-05-15 15:32:36  

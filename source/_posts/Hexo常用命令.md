@@ -1,16 +1,16 @@
 ---
 title: Hexo常用命令
 tags: [Hexo]
+categories: [技术]
 ---
  
 # 基本命令 
 * hexo安装命令  
 `npm install hexo -g`  
-
+<!-- more -->
 * hexo升级  
 `npm update hexo -g`  
 
-<!-- more -->
 * hexo初始化目录  
 `hexo init`  
 
@@ -38,6 +38,11 @@ tags: [Hexo]
   
 * 清除缓存  
 `hexo clean`  
+
+* 创建新页面  
+`hexo new page "tags"`  
+此时在source下就多了一个tags目录，里面有个index.md文件，回到主题配置文件下，为memu项添加：  
+`tags: /tags`
 
 # 模板  
 ```

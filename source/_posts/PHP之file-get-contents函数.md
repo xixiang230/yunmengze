@@ -10,12 +10,14 @@ file_get_contents函数用于把整个文件读入到一个字符串中，是用
 * filename 为要读取的文件的名称，可以是绝对或相对路径名。  
 * 返回：The function returns the read data 或者在失败时返回 FALSE。
 
-```
-  <?php
+
+{% vimhl php true %}  
+<?php
       $content = file_get_contents("../test.txt");  
       echo $content;  
-  ?>  
-```
+?>  
+{% endvimhl %}  
+
 # 弊端  
 使用file_get_contents函数获取URL内容时，当URL访问不了，会导致页面漫长等待，甚至还导致PHP进程占用CPU达100%之多，造成服务宕机。  
 

@@ -6,6 +6,7 @@ categories: [技术]
 ---
 # 常用四字命令    
   ZooKeeper 支持某些特定的四字命令字母与其的交互，大多是查询命令，用来获取 ZooKeeper 服务的当前状态及相关信息。用户可在客户端可以通过 telnet 或 nc 向 ZooKeeper 提交相应的命令。常用四字命令如下表：  
+  
 <!-- more -->  
 |四字命令|功能|  
 |-------|----|  
@@ -50,7 +51,7 @@ categories: [技术]
 2. 使用ls2命令查看当前节点内容以及更新次数等更多信息  
 `ls2 /`  
 3. 创建新的znode  
-`create /liuzekun Hello`   #创建一个新的znode节点，路径为/Liuzekun，并关联到字符串数据Hello，注意这里内容无需引号包围  
+`create /liuzekun Hello`   #创建一个新的znode节点，路径为/liuzekun，并关联到字符串数据Hello，注意这里内容无需引号包围  
 4. 使用get命令获取znode节点中关联的数据内容  
 `get /liuzekun` 
 5. 使用set命令重置znode节点中关联的数据内容  

@@ -3,17 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 云梦泽
-subtitle: 个人博客
-author: yunmengze 
-language: zh-Hans
+title: 云梦泽                      #网站标题
+subtitle: 个人博客                 #网站副标题
+author: yunmengze                  #名字
+language: zh-Hans                  #网站使用语言
 avatar: /images/avatar.png
-description: 求知若饥，虛心若愚
-timezone:
+description: 求知若饥，虛心若愚    #网站描述
+timezone:                          #网站时区  
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+#url: http://yoursite.com
+url: http://xixiang230.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -47,6 +48,9 @@ highlight:
 # Category & Tag
 default_category: uncategorized
 category_map:
+    技术: technique
+    生活: life
+    其他: other
 tag_map:
 
 # Date / Time format
@@ -64,6 +68,10 @@ pagination_dir: page
 # Extensions
 Plugins:
 - hexo-tag-vimhighlight 
+- hexo-generator-feed
+- hexo-generator-sitemap
+
+
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
@@ -76,3 +84,16 @@ deploy:
   branch: master
 rss: /atom.xml
 since: 2016
+
+index_generator:  
+    per_page: 10  ##首页默认10篇文章标题，如果值为0表示不分页  
+   
+archive_generator:  
+    per_page: 10  ##归档页面默认10篇文章标题，如果值为0表示不分页  
+    yearly: true  ##生成年视图  
+    monthly: true  ##生成月视图  
+
+tag_generator:  
+    per_page: 10  ##标签页面默认10篇文章，如果值为0不分页  
+category_generator:  
+    per_page: 10  ##分类页面默认10篇文章，如果值为0不分页  

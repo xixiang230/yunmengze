@@ -2,7 +2,11 @@
 title: git push本地代码到github出错
 date: 2016-05-15 17:37:27
 tags: [git]
+categories: [技术]
+url_image: git.png  
 ---
+![](https://github.com/xixiang230/xixiang230.github.io/blob/master/images/git.png?raw=true)
+
 # 问题描述  
     git push -u origin master  
     To git@github.com:******/Demo.git  

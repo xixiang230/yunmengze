@@ -5,7 +5,7 @@ tags: [C++, STL]
 categories: [技术]  
 ---
 # mem_fn系列函数介绍    
-mem_fn系列函数包括: mem_fun, mem_fun_ref, mem_fn。 
+mem_fn系列函数包括: mem_fun, mem_fun_ref, mem_fn，ptr_fun。 
 * mem_fun_ref : 把成员函数转为函数对象，使用对象(引用)进行绑定。转为函数为对成员函数引用的实现，主要为兼容泛型算法使用成员函数对容器元素进行操作的场景。  
 <!-- more -->
 ```

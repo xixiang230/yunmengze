@@ -258,7 +258,20 @@ is similar to wrap(). However, if wrapping around multiple elements, the structu
 可以看到，"type1"的div(#myDiv1和#myDiv2)各自拥有新的div包围，而对于"type2"的div(#myDiv3和#myDiv4)则成为一个整体被新的div包围。  
 * wrapInner()  
 wraps an HTML structure around the contents of an element or elements.
-wrapInner()和wrap()类似，只是wrap()新增的内容包围在给定元素外面(around),而wrapInner()则将新增的内容包围住被选元素自己的内容。  
+wrapInner()和wrap()类似，用于在每个匹配元素的所有子节点(包括文本节点，注释节点等任意节点类型)外部包裹指定的HTML结构，
+区别：wrap()新增的内容包围在给定元素外面(around)，而wrapInner()则将新增的内容包围住被选元素自己的内容。  
+wrapInner()的参数可以是string，element，jQuery，Function类型，用来包裹匹配元素的节点。如果参数为字符串，则视为jQuery选择器
+或html字符串，具体jQuery会自行判断。参数为函数时，wrapInner()会根据匹配的所有元素上遍历执行该函数，函数中的this指向
+对应当前遍历到的DOM元素，另外wrapInner还会为函数传入一个当前遍历元素在匹配元素中的索引，函数的返回值应该是用于包裹节点
+的内容，可以是html字符串，选择器，DOM元素或jQuery对象等。
+
+注:
+1. 如果选择器参数匹配多个元素，则只将第一个元素作为包裹元素。  
+2. 如果参数是多层嵌套的元素(比如：`"<p><i></i></p>"`)，则wrapInner()将从外往内检查每层嵌套的第一个节点。如果该节点没有
+子节点或者第一个子节点不是Element节点(比如文本节点，注释节点等)，就停止向内查找，直接在当前节点内部的末尾追加(append())当前匹配元素。
+3. 即使参数是当前页面中的元素，wrpaInner()使用的是该元素的副本来包裹目标元素。  
+返回值:  
+wrapInner()的返回值为jQuery类型，返回当前jQuery对象本身（以便进行链式风格的编程）
 ```
 // Wrap a div around #myDiv1
   $('#myDiv1').wrap( '<div id="newDiv1" />' );
@@ -279,6 +292,40 @@ wrapInner()和wrap()类似，只是wrap()新增的内容包围在给定元素外
     <p>Existing paragraph</p>
   </div>
 </div>
+```
+在比如： 
+```
+<p> para 1 <span></span></p>
+<p> para 2 <span></span></p>
+<script>
+$("p").wrapInner('<em></em>');
+</script>
+<!-- 执行后html内容 -->
+<p><em> para 1 <span></span></em></p>
+<p><em> para 2 <span></span></em></p>
+```
+```
+<p>
+    <span>foo</span>
+</p>
+<p>
+    <label>baidu</label>
+    <span>tecent</span>
+</p>
+<script>
+    $("p").wrapInner('<strong></strong>');
+</script>
+```
+这里p元素的所有子节点外部都hi包裹stong元素。wrapperInner()将在每个p元素的开始标记之后，结束标记之前
+分别插入包裹元素的开始标记和结束标记，甚至都不添加额外的空白字符。输入如下内容:
+```
+<p><strong>
+    <span>foo</span>
+</strong></p>
+<p><strong>
+    <label>baidu</label>
+    <span>bar</span>
+</strong></p>
 ```
 可见，调用wrap()是将内容around the outside of #myDiv1，而当调用#wrapInner()则是将新增内容around the inside contents of #myDiv2。
 * html()  

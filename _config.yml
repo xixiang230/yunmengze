@@ -9,11 +9,10 @@ author: yunmengze                  #名字
 language: zh-Hans                  #网站使用语言
 avatar: /images/avatar.png
 description: 求知若饥，虛心若愚    #网站描述
-timezone:                          #网站时区  
+timezone: Asia/Shanghai                         #网站时区  
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-#url: http://yoursite.com
 url: http://xixiang230.github.io/
 root: /
 permalink: :year/:month/:day/:title/
